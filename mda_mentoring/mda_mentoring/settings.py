@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'goals',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +76,15 @@ WSGI_APPLICATION = 'mda_mentoring.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mda',
+        'USER': 'mda',
+        'PASSWORD': 'mda12345678',
+        'HOST': 'mda-mentoring.c74u77we23gg.ap-southeast-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
