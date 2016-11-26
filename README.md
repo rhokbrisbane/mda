@@ -10,3 +10,7 @@ DB instance Details (postgreSQL)
 
 Running the Django project from the AWS instance
 - ~/mda/mda_mentoring: python manage.py runserver ec2-54-206-36-167.ap-southeast-2.compute.amazonaws.com:8000
+
+Slack API
+- client ID: 108594367905.110075204087
+- client secret: 13b31acef597d94e5d50f78cdb81563b
