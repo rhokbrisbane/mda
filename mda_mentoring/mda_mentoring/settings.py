@@ -25,7 +25,7 @@ SECRET_KEY = '@=q+o4qmj85y)gkss)erm6xk^dfsh1v^)ib$#r_m4%+tr^wukt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://ec2-54-206-36-167.ap-southeast-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['http://ec2-54-206-36-167.ap-southeast-2.compute.amazonaws.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'goals',
     'profiles',
+    'authentication'
 ]
 
 MIDDLEWARE_CLASSES = [
