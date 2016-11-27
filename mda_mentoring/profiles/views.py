@@ -38,7 +38,7 @@ class LogoutView(View):
 
 class CreateProfileView(CreateView):
     model = Profile
-    fields = ['username', 'email', 'password', 'phone_number', 'experience']
+    fields = ['username', 'email', 'password', 'phone_number', 'experience', 'is_mentor']
     template_name = "create_profile.html"
     success_url = '/goals/'
 
