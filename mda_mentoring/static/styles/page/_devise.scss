@@ -1,0 +1,68 @@
+/* Devise Pages
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.devise {
+  .container {
+    @extend .p1;
+  }
+
+  input,
+  textarea,
+  select,
+  fieldset {
+    margin-bottom: 2.5rem;
+  }
+
+  form {
+    @extend .mb0;
+  }
+
+  input[type="submit"] {
+    @extend .mt4;
+    @extend .mb0;
+    @extend .w100;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="number"],
+  select {
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $grey;
+    font-size: $font-base;
+
+    &:hover,
+    &:focus {
+      border-bottom-color: $brand;
+    }
+  }
+
+  a,
+  a:visited,
+  a:active { 
+    color: $white; 
+  }
+
+  a:hover { color: $grey-dark; }
+}
+
+.bg-devise {
+  background-image: image-url('background-devise.jpeg');
+  background-size: cover;
+  background-position: 0 center;
+  position: relative;
+  background-color: black;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-135deg, #484848 0%, #020202 96%, #000000 100%);
+    opacity: 0.8;
+    z-index: 0;
+  }
+}

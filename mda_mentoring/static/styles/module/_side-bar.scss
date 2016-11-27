@@ -1,0 +1,71 @@
+/* Side bar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.side-bar-wrapper {
+  @media screen and (min-width: $tablet) {
+    position: fixed;
+    top: 0; 
+    left: 0;
+  }
+}
+
+.side-bar {
+  min-width: 8rem;
+  background-color: $brand-shade;
+
+  .logo {
+    width: 7rem;
+    height: 2.7rem;
+  }
+
+  @media screen and (min-width: $tablet) {
+    min-height: 100vh;
+  }
+}
+
+.side-bar-logo {
+  width: 100%;
+  height: $row-height;
+  background-color: $brand;
+  transition: $button-transition;
+
+  &:hover {
+    background-color: $brand-highlight;
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: 8rem;
+  }
+}
+
+.side-bar-link {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  transition: $button-transition;
+  border: $border;
+  color: $grey;
+  border-color: $grey;
+  text-align: center;
+  border-radius: $border-radius;
+
+  &:hover,
+  &.active {
+    @extend .shadow;
+    color: $white;
+    border-color: $white;
+  }
+
+  img {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem 0 1rem;
+  }
+}
+
+.side-bar-avatar {
+  width: 4rem;
+  height: 4rem;
+  background-size: cover;
+  border-radius: 100%;
+  border: 1px solid $white;
+}

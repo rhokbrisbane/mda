@@ -1,0 +1,84 @@
+/* Inputs
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+select {
+  -webkit-appearance: none;
+  padding: 1rem 2rem;
+  outline: 0;
+  border: none;
+  font-size: $font-base;
+  border-radius: 0;
+  width: 100%;
+  background-color: transparent;
+  
+  &:focus {
+    border-color: $brand;
+    transition: border-color 0.2s;
+  }
+
+  &:disabled {
+    background-color: $grey-xlight;
+  }
+
+  &::placeholder {
+    color: $grey;
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 1rem 0;
+  }
+}
+
+textarea {
+  &:disabled {
+    background-color: $grey-xlight;
+  }
+}
+
+input[type="file"],
+select,
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+select,
+textarea {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 1rem 2rem;
+  border-color: $grey-light;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: top 0.75em right 1em;
+  background-size: 1.5rem;
+  width: 100%;
+  outline: none;
+
+  &:focus {
+    border-color: $brand;
+    transition: border-color 0.2s;
+  }
+}
+
+textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+select {
+  line-height: 1.5;
+  padding: 1rem 2rem;
+}
+
+// Hide
+.radio-hide {
+  input[type="radio"] {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+/* Radio Button Hack
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.radio-button-hack {
+  input[type="radio"] { display: none; }
+  
+  label { opacity: 0.3; }
+
+  label:hover,
+  input[type="radio"]:checked ~ label {
+    opacity: 1;
+  }
+}
