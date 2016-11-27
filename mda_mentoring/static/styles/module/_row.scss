@@ -25,6 +25,23 @@
   }
 }
 
+.row-avatar {
+  width: 8rem;
+  height: 8rem;
+  background-size: cover;
+  border-radius: 100%;
+  border: 1px solid $white;
+  background-color: $white;
+}
+
+.row-label {
+  @extend .flex1;
+  @extend .font-small;
+  @extend .uppercase;
+  @extend .text-grey;
+  @extend .letter-spacing-2;
+}
+
 .row-date {
   line-height: 1.5;
 }
