@@ -63,3 +63,17 @@ class MenteeProfileView(View):
     @method_decorator(login_required)
     def get(self, request):
         return render(request, 'mentee/profile.html')
+
+class MentorProfileView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        return render(request, 'mentor/profile.html')
+
+    def get_form(self, form_class):
+        form = super(MentorProfileView, self).get_form(form_class)
+        return form
+        
+    def form_valid(self, form):
+        self.object = form.save()
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
