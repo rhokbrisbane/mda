@@ -15,6 +15,8 @@ class Profile(AbstractUser):
     field = models.TextField(null=True, blank=True)
     mentee = models.ForeignKey('self', null=True, blank=True)
     events = models.ManyToManyField(Event, blank=True)
+    is_mentor = models.BooleanField(null=False, default=False)
+    slack_username = models.CharField(max_length = 100, null=True, blank=True)
 
     def __unicode__(self):
         return self.username

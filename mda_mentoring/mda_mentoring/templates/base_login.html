@@ -1,0 +1,26 @@
+{% load static %}
+{% load compress %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+
+      <title>MDA - Mentoring</title>
+
+      {% compress css %}
+          <link rel="stylesheet" type="text/x-scss" href="{% static "styles/main.scss" %}" />
+      {% endcompress %}
+  </head>
+
+  <body class="flex flex-column min-h100vh bg-devise devise">
+
+    <div class="container max-w450px sm-max-w320px flex flex-column flex-auto items-center z-index-1">
+      <div class="logo my6"></div>
+      
+      <div class=" flex flex-column w100">
+        {% block content %}{% endblock %}
+      </div>
+    <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+    {% block js %}{% endblock %}
+  </body>
+</html>

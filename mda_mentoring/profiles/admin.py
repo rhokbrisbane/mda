@@ -6,7 +6,8 @@ from .models import Profile
 
 
 class ProfileAdmin(UserAdmin):
-
-    pass
+  fieldsets = UserAdmin.fieldsets + (
+    (None, {'fields': ('experience', 'mentee', 'phone_number', 'is_mentor', 'slack_username', 'field', 'qualification', 'language' )}),
+  )
 
 admin.site.register(Profile, ProfileAdmin)

@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^goals/', include('goals.urls', namespace='goals')),
     url(r'^auth/', include('authentication.urls')),
     url(r'^profiles/', include('profiles.urls')),
+    url(r'^events/', include('events.urls')),
 ]
