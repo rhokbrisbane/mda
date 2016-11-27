@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="34px" viewBox="0 0 88 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="PTSans-Bold, PT Sans" font-weight="bold">
+        <g id="side-bar" transform="translate(-6.000000, -24.000000)" fill="#FFFFFF">
+            <g id="Group-2" transform="translate(6.000000, 21.000000)">
+                <text id="Mentoring" font-size="20">
+                    <tspan x="0" y="32">Mentoring</tspan>
+                </text>
+                <text id="mda" font-size="12">
+                    <tspan x="0" y="11">mda</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

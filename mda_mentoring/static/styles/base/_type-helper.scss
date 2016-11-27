@@ -1,0 +1,30 @@
+/* Type Helpers
+/  - Font Weight
+/  - Font Style
+/  - Text Align
+/  - Text Transform
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+// Font Weight
+.regular        { font-weight: 400; }
+.bold           { font-weight: 700; }
+
+// Font Style
+.italic         { font-style: italic; }
+
+// Text Align
+.right-align    { text-align: right; }
+.left-align     { text-align: left; }
+.center-align   { text-align: center; }
+
+// Text Transform
+.uppercase      { text-transform: uppercase; }
+.capitalize     { text-transform: capitalize; }
+.no-transform   { text-transform: none; }
+
+// Letter Spacing
+.letter-spacing-1 { letter-spacing: 0.25px; }
+.letter-spacing-2 { letter-spacing: 0.5px; }
+
+@media screen and (max-width: $tablet) {
+  .sm-center-align   { text-align: center; }
+}

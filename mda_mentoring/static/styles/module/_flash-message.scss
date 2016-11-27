@@ -1,0 +1,27 @@
+/* Flash Message
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.flash {
+  @extend .text-white;
+  padding: 1rem 2rem;
+  z-index: 2;
+
+  @media screen and (max-width: $tablet) {
+    padding: 1rem 1rem;
+  }
+}
+
+.alert-alert,
+.alert-error, {
+  @extend .flash;
+  @extend .bg-alert;
+}
+
+.alert-success {
+  @extend .flash;
+  @extend .bg-success;
+}
+
+.alert-notice {
+  @extend .flash;
+  @extend .bg-notice;
+}
