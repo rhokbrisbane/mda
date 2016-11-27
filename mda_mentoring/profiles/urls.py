@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'login/', LoginView.as_view()),
     url(r'logout/', LogoutView.as_view()),
     url(r'create/', CreateProfileView.as_view()),
-    url(r'mentee/', MenteeProfileView.as_view())
+    url(r'view/', MenteeProfileView.as_view())
 ]
