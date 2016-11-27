@@ -1,20 +1,19 @@
 svg {
-  width: 200px;
+  min-width: 200px;
   height: 200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 line {
   stroke-width: 2;
-  stroke: #333;
+  stroke: $brand-highlight;
 }
 
 text {
-  font-family: Helvetica;
-  stroke: #aaa;
+  stroke: $grey;
+  font-size: $font-small;
+  font-weight: 100;
 }
 
 polygon {
-  fill: #ccc;
+  fill: rgba($brand-highlight, 0.3);
 }
