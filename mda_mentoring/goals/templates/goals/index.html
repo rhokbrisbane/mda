@@ -3,7 +3,7 @@
 {% if goal_list %}
 <ul>
     {% for goal in goal_list %}
-    <li><a href="/goals/{{ goal.id }}/">{{ goal.user}}: {{ goal.name }}</a></li>
+    <li><a href="/goals/{{ goal.id }}/">{{ goal.user}} (evaluated {{ goal.eval_date}}) {{ goal.name }}</a></li>
     {% endfor %}
 </ul>
 {% else %}

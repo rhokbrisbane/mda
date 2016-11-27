@@ -13,8 +13,21 @@ data.push({ 'rating': {{ milestone.value}}, 'name': '{{ milestone.name }}' })
 {% block content %}
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<h1>{{ goal.name }}</h1>
-<h2>{{ goal.user }}</h2>
+<h1>{{ goal.name }} </h1>
+<h2>Mentee: {{ goal.user }}</h2>
+<h3>Evaluated {{ goal.eval_date }}</h3>
 <svg viewport="0 0 200 200" id="graph"></svg>
+
+Each milestone is to be evaluated weekly using the following low (0) and high (10) conditions
+
+<ul>
+    {% for milestone in goal.milestone_set.all %}
+    <li>{{milestone.name}}</li>
+    <ul>
+        <li>Low evaluation: {{milestone.low_evaluation}}</li>
+        <li>High evaluation: {{milestone.high_evaluation}}</li>
+    </ul>
+    {% endfor %}
+</ul>
 
 {% endblock %}
