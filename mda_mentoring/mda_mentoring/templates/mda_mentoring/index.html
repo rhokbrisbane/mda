@@ -1,5 +1,27 @@
-Hi there
+{% load static %}
+{% load compress %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
 
-<ul>
-    <li><a href="{% url 'goals:index' %}">Goals</a></li>
-</ul>
+      <title>MDA - Mentoring</title>
+
+      {% compress css %}
+          <link rel="stylesheet" type="text/x-scss" href="{% static "styles/main.scss" %}" />
+      {% endcompress %}
+  </head>
+
+  <body class="flex flex-column min-h100vh bg-devise devise">
+
+    <div class="container max-w450px sm-max-w320px flex flex-column flex-auto items-center z-index-1">
+      <div class="logo my6"></div>
+      
+      <div class=" flex flex-column w100">
+        <a href="/profiles/create?is_mentor=true">Create a mentee profile</a>
+        <a href="/profiles/create?is_mentee=false">Create a mentor profile</a>
+        <a href="/profiles/login">Login</a>        
+      </div>
+    <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+  </body>
+</html>
