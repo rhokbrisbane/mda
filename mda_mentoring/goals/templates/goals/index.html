@@ -3,9 +3,10 @@
 {% if goal_list %}
 <ul>
     {% for goal in goal_list %}
-    <li><a href="/goals/{{ goal.id }}/">{{ goal.name }}</a></li>
+    <li><a href="/goals/{{ goal.id }}/">{{ goal.user}}: {{ goal.name }}</a></li>
     {% endfor %}
 </ul>
 {% else %}
 <p>No goals are available.</p>
+{% endif %}
 {% endblock %}
