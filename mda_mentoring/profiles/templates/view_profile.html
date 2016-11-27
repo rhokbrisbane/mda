@@ -5,7 +5,7 @@
 <div class="bg-white shadow">
   <div class="container flex flex-wrap sm-flex-column justify-between items-center">
     <div class="flex items-center">
-      <div class="row-title sm-py4">My Mentee</div>
+      <div class="row-title sm-py4">My {% if request.user.is_mentor %}mentee{% else %}mentor{% endif %}</div>
     </div>
     <div class="flex sm-mb4">
       <a target="_blank" href="https://mda-mentoring.slack.com/messages/@{{ profile.slack_username }}"><div class="row-button">Slack Message</div></a>

@@ -20,7 +20,7 @@ class LoginView(View):
             if user.is_active:
                 login(request, user)
 
-                return HttpResponseRedirect('/goals/')
+                return HttpResponseRedirect('/profiles/view/')
             else:
                 return HttpResponse("Inactive user.")
         else:
@@ -55,7 +55,7 @@ class CreateProfileView(CreateView):
 
 
 # Create your views here.
-class MenteeProfileView(View):
+class ProfileView(View):
     def get(self, request):
         current_user = request.user
         if current_user.is_mentor:
