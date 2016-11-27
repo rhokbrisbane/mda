@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'profiles',
     'mda_mentoring',
     'authentication',
-    'compressor'
+    'compressor',
+    'events',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -79,7 +80,7 @@ WSGI_APPLICATION = 'mda_mentoring.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
- 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
