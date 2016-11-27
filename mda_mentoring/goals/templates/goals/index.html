@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
 {% if goal_list %}
-    <ul>
+<ul>
     {% for goal in goal_list %}
-        <li><a href="/goals/{{ goal.id }}/">{{ goal.name }}</a></li>
+    <li><a href="/goals/{{ goal.id }}/">{{ goal.name }}</a></li>
     {% endfor %}
-    </ul>
+</ul>
 {% else %}
-    <p>No goals are available.</p>
-{% endif %}
+<p>No goals are available.</p>
+{% endblock %}
