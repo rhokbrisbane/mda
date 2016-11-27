@@ -1,21 +1,3 @@
-svg {
-  width: 200px;
-  height: 200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-line {
-  stroke-width: 2;
-  stroke: #333;
-}
-text {
-  font-family: Helvetica;
-  stroke: #aaa;
-}
-polygon {
-  fill: #ccc;
-}
-
 /* Normalize
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import "normalize";
@@ -54,6 +36,7 @@ polygon {
 @import "module/radio-button";
 @import "module/row";
 @import "module/side-bar";
+@import "module/svg";
 
 /* Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

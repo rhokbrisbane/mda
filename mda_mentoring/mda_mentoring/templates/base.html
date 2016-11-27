@@ -39,15 +39,18 @@
                     <img src="{% static "images/goal.svg" %}">
                   </div>
                 </a>
+
+                <a href="/events/eventList/">
                 <div class="side-bar-link icon font-base my2 sm-mx2">
-                  <img src="{% static "images/event.svg" %}">
+                    <img src="{% static "images/event.svg" %}">
                 </div>
+                </a>
               </div>
             </div>
             <div class="flex md-flex-column lg-flex-column items-center py2 sm-mr1">
                 <div class="side-bar-avatar" style="background-image: url(<%= current_user.avatar.url(:thumb) %>)"></div>
 
-                <div class="flex flex-column sm-flex-row flex-auto">
+                <div class="flex flex-column sm-flex-row flex-auto sm-hide">
                     <a class="mt2 font-small" href="/profiles/logout">Sign out</a>
                 </div>
             </div>
