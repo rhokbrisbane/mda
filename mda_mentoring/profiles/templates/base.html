@@ -1,57 +1,58 @@
 {% load static %}
 {% load compress %}
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+      <meta charset="UTF-8">
 
-    <title>MDA - Mentoring</title>
+      <title>MDA - Mentoring</title>
 
-    {% compress css %}
-        <link rel="stylesheet" type="text/x-scss" href="{% static "styles/main.scss" %}" />
-    {% endcompress %}
-</head>
+      {% compress css %}
+          <link rel="stylesheet" type="text/x-scss" href="{% static "styles/main.scss" %}" />
+      {% endcompress %}
+  </head>
 
-<body class="bg-brand-highlight">
-  <div class="bg-grey-xlight sm-h100vh">
-    <div class="flex sm-flex-column">
-      <!-- Side Bar -->
-      <div class="side-bar-wrapper">
-        <div class="side-bar flex md-flex-column lg-flex-column">
-          <div class="flex flex-column sm-flex-row flex-auto">
+  <body class="bg-brand-highlight">
+    <div class="bg-grey-xlight sm-h100vh">
+      <div class="flex sm-flex-column">
+        <!-- Side Bar -->
+        <div class="side-bar-wrapper">
+          <div class="side-bar flex md-flex-column lg-flex-column">
+            <div class="flex flex-column sm-flex-row flex-auto">
 
-            <a href="/">
-              <div class="side-bar-logo flex flex-column items-center">
-                <div class="flex-auto flex flex-column justify-center">
-                  <div class="logo"></div>
+              <a href="/">
+                <div class="side-bar-logo flex flex-column items-center">
+                  <div class="flex-auto flex flex-column justify-center">
+                    <div class="logo"></div>
+                  </div>
+                </div>
+              </a>
+
+              <div class="sm-flex4 flex-auto flex md-flex-column lg-flex-column items-center sm-flex-wrap sm-my0 mt2 sm-ml2">
+                <div class="side-bar-link icon font-base my2 sm-mx2">
+                  <img src="{% static "images/mentor.svg" %}">
+                </div>
+                <a href="/goals">
+                  <div class="side-bar-link icon font-base my2 sm-mx2">
+                    <img src="{% static "images/goal.svg" %}">
+                  </div>
+                </a>
+                <div class="side-bar-link icon font-base my2 sm-mx2">
+                  <img src="{% static "images/event.svg" %}">
                 </div>
               </div>
-            </a>
-
-            <div class="sm-flex4 flex-auto flex md-flex-column lg-flex-column items-center sm-flex-wrap sm-my0 mt2 sm-ml2">
-              <div class="side-bar-link icon font-base my2 sm-mx2">
-                <img src="{% static "images/mentor.svg" %}">
-              </div>
-              <div class="side-bar-link icon font-base my2 sm-mx2">
-                <img src="{% static "images/goal.svg" %}">
-              </div>
-              <div class="side-bar-link icon font-base my2 sm-mx2">
-                <img src="{% static "images/event.svg" %}">
-              </div>
+            </div>
+            <div class="flex md-flex-column lg-flex-column items-center py2 sm-mr1">
+              <div class="side-bar-avatar" style="background-image: url(<%= current_user.avatar.url(:thumb) %>)"></div>
             </div>
           </div>
-          <div class="flex md-flex-column lg-flex-column items-center py2 sm-mr1">
-            <div class="side-bar-avatar" style="background-image: url(<%= current_user.avatar.url(:thumb) %>)"></div>
-          </div>
+        </div>
+
+        <!-- Main -->
+        <div class="w100 md-h100vh lg-h100vh scroll-y-auto md-ml16 lg-ml16 pb6">
+          {% block content %}{% endblock %}
         </div>
       </div>
-
-      <!-- Main -->
-      <div class="w100 md-h100vh lg-h100vh scroll-y-auto md-ml16 lg-ml16 pb6">
-        {% block content %}{% endblock %}
-      </div>
     </div>
-  </div>
-  <script type="text/javascript" src="{% static "js/main.js" %}"></script>
-</body>
+    <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+  </body>
 </html>
