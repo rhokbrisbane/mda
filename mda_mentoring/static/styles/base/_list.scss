@@ -1,0 +1,40 @@
+/* List
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+dl,
+ol,
+ul {
+  margin-top: 0;
+  padding-left: 0;
+
+  dl,
+  ol,
+  ul {
+    margin-left: 1.5rem;
+    font-size: 90%;
+  }
+}
+
+
+dl {
+  list-style: none;
+}
+
+ul {
+  list-style: circle inside;
+}
+
+ol {
+  list-style: decimal inside;
+}
+
+li {
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.list-reset {
+  list-style-type: none;
+}

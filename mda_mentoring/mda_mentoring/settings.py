@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'goals',
     'profiles',
     'mda_mentoring',
+    'authentication',
     'compressor'
 ]
 

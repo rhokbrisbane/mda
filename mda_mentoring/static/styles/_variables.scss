@@ -1,0 +1,78 @@
+/* Font
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700');
+
+/* Colors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$brand:                   #009FDA; // blue
+$brand-shade:             shade($brand, 70%);
+
+$brand-highlight:         #F99D1C; // orange
+$brand-highlight-tint:    tint($brand-highlight, 20%); // orange
+
+$white:                   #FFFFFF;
+$black:                   #1A1A1A;
+$grey-xdark:              #535353;
+$grey-dark:               #888888;
+$grey:                    #A6A6A6;
+$grey-light:              #ECECEC;
+$grey-xlight:             #F8F8F8;
+
+/* Category */
+$red:                     #D13D3D;
+$red-tint:                tint($red, 10%);
+$red-tint-light:          tint($red, 30%);
+$blue:                    #3A9ED7;
+$blue-tint:               tint($blue, 10%);
+$blue-tint-light:         tint($blue, 30%);
+$purple:                  #7A5DD4;
+$purple-tint:             tint($purple, 10%);
+$purple-tint-light:       tint($purple, 30%);
+$green:                   #90B769;
+$green-tint:              tint($green, 10%);
+$green-tint-light:        tint($green, 30%);
+
+/* Flash Message */
+$success:                 $blue-tint;
+$alert:                   $red-tint;
+$notice:                  $green-tint;
+
+/* Font Size
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$font-base:               1.6rem; // 16px
+$font-small:              $font-base * 0.875;   // 14px
+$font-smaller:            $font-base * 0.75;    // 12px
+$font-large:              $font-base * 1.25;    // 20px
+$font-larger:             $font-base * 1.5;     // 24px
+$font-title:              $font-base * 3.375;   // 54px
+
+/* Font Stack
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$font-sans:               'PT Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+/* Line Height
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$line-height-base:        1.5;
+$line-height-small:       1.375;
+$line-height-smaller:     1.25;
+$line-height-smallest:    1.125;
+$line-height-large:       1.75;
+
+/* Border Variable
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$border:                  1px solid;
+$border-radius:           4px;
+
+/* Transition
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$text-transition:         color 0.15s ease-in-out 0s;
+$button-transition:       all 0.15s ease 0s;
+
+/* Breakpoint Size
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$tablet:                  768px;
+$desktop:                 1024px;
+
+/* Row
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$row-height:              6rem;
