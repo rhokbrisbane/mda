@@ -1,18 +1,19 @@
 svg {
-    width: 200px;
-    height: 200px;
-    padding: 15em;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 line {
-    stroke-width: 2;
-    stroke: #333;
+  stroke-width: 2;
+  stroke: #333;
 }
 text {
-    font-family: Helvetica;
-    stroke: #aaa;
+  font-family: Helvetica;
+  stroke: #aaa;
 }
 polygon {
-    fill: #ccc;
+  fill: #ccc;
 }
 
 /* Normalize

@@ -1,5 +1,18 @@
 {% extends "base.html" %}
+
 {% block content %}
+<!-- Title -->
+<div class="bg-white shadow">
+  <div class="container flex flex-wrap sm-flex-column justify-between items-center">
+    <div class="flex items-center">
+      <div class="row-title sm-py4">My Goal</div>
+    </div>
+    <div class="flex sm-mb4">
+      <div class="row-button">Create a goal</div>
+    </div>
+  </div>
+</div>
+
 {% if goal_list %}
 <ul>
     {% for goal in goal_list %}

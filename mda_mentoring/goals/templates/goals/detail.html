@@ -4,7 +4,7 @@
 <script type="text/javascript">
 var data = []
 {% for milestone in goal.milestone_set.all %}
-data.push({ 'rating': {{ milestone.value}}, 'name': '{{ milestone.name }}' })
+data.push({ 'rating': {{ milestone.value }}, 'name': '{{ milestone.name }}' })
 {% endfor %}
 </script>
 <script type="text/javascript" src="{% static "js/graph.js" %}"></script>
@@ -12,41 +12,108 @@ data.push({ 'rating': {{ milestone.value}}, 'name': '{{ milestone.name }}' })
 
 {% block content %}
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
-<h1>{{ goal.name }} </h1>
-<h2>Mentee: {{ goal.user }}</h2>
-<h3>Evaluated {{ goal.eval_date }}</h3>
-<div>
-<svg viewport="0 0 200 200" id="graph"></svg>
+<!-- Title -->
+<div class="bg-white shadow">
+  <div class="container flex flex-wrap sm-flex-column justify-between items-center">
+    <div class="flex items-center">
+      <div class="row-title sm-py4">Goal</div>
+    </div>
+    <div class="flex sm-mb4">
+      <div class="row-button">Create a goal</div>
+    </div>
+  </div>
 </div>
 
-<div>
-<span>Each milestone is to be evaluated weekly using the following low (0) and high (10) conditions</span>
-
-<ul>
-    {% for milestone in goal.milestone_set.all %}
-    <li>Milestone: {{milestone.name}}</li>
-    <ul>
-        <li>Low evaluation: {{milestone.low_evaluation}}</li>
-        <li>High evaluation: {{milestone.high_evaluation}}</li>
-    </ul>
-    {% endfor %}
-</ul>
+<!-- Goals -->
+<div class="mt2 container">
+  <div class="p2 flex justify-between items-center">
+    <div class="font-large text-grey italic">
+      {{ goal.name }}
+      <span class="row-date text-grey font-small ml2 sm-hide">
+        Evaluated {{ goal.eval_date }}
+      </span>
+    </div>
+    <div class="flex items-center">
+      <a class="row-button secondary">Update</a>
+      <a class="row-button ml2">Evaluate</a>
+    </div>
+  </div>
 </div>
 
+<div class="mt2 container">
+  <div class="bg-white px4 pt4 pb2 sm-pb3 flex flex-column shadow">
+    <div class="container">
+        <svg viewport="0 0 200 200" id="graph" class="w100"></svg>
+    </div>
+  </div>
+</div>
 
-<div>
-<h1>Actions</h1>
-<ul style="list-style-type: none;">
-    {% for milestone in goal.milestone_set.all %}
-    <li>Milestone: {{ milestone.name }}</li>
-    <ul style="list-style-type: none;">
+<!-- Milestone -->
+<div class="mt4 container">
+  <div class="p2 flex justify-between items-center">
+    <div class="font-large text-grey italic">
+      Sub Goals
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  {% for milestone in goal.milestone_set.all %}
+  <div class="py1 mb1">
+
+    <div class="container mb1">
+      <div class="flex sm-flex-column justify-between items-center font-small text-grey letter-spacing-2">
+        <span class="uppercase">
+          {{milestone.name}}
+        </span>
+      </div>
+    </div>
+
+    <div class="bg-white border-full border-white border-grey-light-hover py2 mb2 shadow">
+      <div class="container flex sm-flex-column justify-betweentext-black font-base">
+        <span class="flex1 center-align">- {{milestone.low_evaluation}}</span>
+        <span class="flex1 center-align">{{ milestone.value }}</span>
+        <span class="flex1 center-align">+ {{milestone.high_evaluation}}</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Actions -->
+<div class="mt4 container">
+  <div class="p2 flex justify-between items-center">
+    <div class="font-large text-grey italic">
+      My Action List
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  {% for milestone in goal.milestone_set.all %}
+    {% if milestone.action_set.all.count > 0 %}
+      <div class="py1 mb1">
+        <div class="container mb1">
+          <div class="flex sm-flex-column justify-between items-center font-small text-grey letter-spacing-2">
+            <span class="uppercase">
+              {{milestone.name}}
+            </span>
+          </div>
+        </div>
+
         {% for action in milestone.action_set.all %}
-        <li><input type="checkbox"> {{action.name}}</input></li>
+          <div class="bg-white border-full border-white border-grey-light-hover py2 mb2 shadow">
+            <div class="container flex items-center text-black font-base">
+              <input type="checkbox"></input>
+              <label class="ml2">{{action.name}}</label>
+            </div>
+          </div>
         {% endfor %}
-    </ul>
-    {% endfor %}
-</ul>
+      </div>
+    {% else %}
+    <div/>
+    {% endif %}
+  {% endfor %}
 </div>
 
 {% endblock %}
