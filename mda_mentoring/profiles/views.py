@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic import View
+from django import forms
 from django.views.generic.edit import CreateView
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -36,11 +37,22 @@ class LogoutView(View):
         return HttpResponseRedirect(LOGIN_URL)
 
 class CreateProfileView(CreateView):
-    # TODO : creating profiles work incorrect now
     model = Profile
     fields = ['username', 'email', 'password', 'phone_number', 'experience']
     template_name = "create_profile.html"
     success_url = '/goals/'
+
+    def get_form(self, form_class):
+        form = super(CreateProfileView, self).get_form(form_class)
+        form.fields['password'].widget = forms.PasswordInput()
+        return form
+
+    def form_valid(self, form):
+        self.object = form.save()
+        self.object.set_password(self.object.password)
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
 
 # Create your views here.
 class MenteeProfileView(View):
