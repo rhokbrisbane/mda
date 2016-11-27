@@ -1,3 +1,20 @@
+svg {
+    width: 200px;
+    height: 200px;
+    padding: 5em;
+}
+line {
+    stroke-width: 2;
+    stroke: #333;
+}
+text {
+    font-family: Helvetica;
+    stroke: #aaa;
+}
+polygon {
+    fill: #ccc;
+}
+
 /* Normalize
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import "normalize";
