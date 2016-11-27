@@ -63,3 +63,93 @@ polygon {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import "module/pickadate-classic";
 @import "module/pickadate-date-classic";
+
+
+.map-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+#map {
+  width: 600px;
+  height: 300px;
+}
+
+.list > div {
+  width: 280px;
+  background: #aaa;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.2em;
+  margin-left: 0.2em;
+}
+
+.list > div > div:nth-child(1) {
+  flex-grow: 1;
+  padding: 0.4em;
+}
+
+.list > div > div:nth-child(2) {
+  font-size: 0.6em;
+  text-align: center;
+  background: #333;
+  padding: 0.4em;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+}
+
+.list > div > div:nth-child(2) > div {
+  font-size: 2em;
+  color: #aaa;
+  flex-grow: 1;
+}
+
+.list > div span {
+  color: #777;
+  font-size: 0.8em;
+}
+
+.map-marker {
+  background: #aaa;
+  border: 2px solid #333;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  font-size: 1.3em;
+  border-radius: 100%;
+}
+
+.invite-button {
+  display: inline-block;
+  float: right;
+  background: #38A;
+  color: #fff;
+  padding: 0.2em 0.6em;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.event-info {
+  padding: 0.5em;
+  background: #eee;
+  display: block !important;
+}
+
+.event-info h2 {
+  font-size: 2em;
+  color: #333;
+  margin: 0;
+}
+
+.invite-item {
+  background: #888 !important;
+}
+
+.invite-item span {
+  color: #555 !important;
+}
