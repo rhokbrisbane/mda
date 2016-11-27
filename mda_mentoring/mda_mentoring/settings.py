@@ -25,7 +25,7 @@ SECRET_KEY = '@=q+o4qmj85y)gkss)erm6xk^dfsh1v^)ib$#r_m4%+tr^wukt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://ec2-54-206-36-167.ap-southeast-2.compute.amazonaws.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'http://ec2-54-206-36-167.ap-southeast-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'goals',
     'profiles',
-    'authentication'
+    'authentication',
+    'compressor'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -124,4 +125,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATIC_ROOT = BASE_DIR + '/static'
 STATIC_URL = '/static/'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder'
+)
+
+COMPRESS_OFFLINE = False
+COMPRESS_ENABLED = True
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'sass --scss {infile} {outfile}'),
+)
