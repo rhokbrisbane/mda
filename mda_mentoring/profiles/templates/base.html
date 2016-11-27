@@ -1,0 +1,19 @@
+{% load static %}
+{% load compress %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>MDA - Mentoring</title>
+
+    {% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static "styles/main.scss" %}" />
+    {% endcompress %}
+</head>
+
+<body>
+{% block content %}{% endblock %}
+ <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+</body>
+</html>
