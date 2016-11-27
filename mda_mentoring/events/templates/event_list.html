@@ -19,8 +19,10 @@
       'name': '{{ o.name }}',
       'lng': Number('{{ o.longitude }}'),
       'lat': Number('{{ o.latitude }}'),
-      'attendees': Number('{{ o.total_attendees }}')
+      'attendees': Number('{{ o.total_attendees }}'),
+      'address': '{{ o.address }}'
     });
+    console.log(data)
   {% endfor %}
   </script>
   <script type="text/javascript">

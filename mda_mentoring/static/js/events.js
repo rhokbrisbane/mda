@@ -50,7 +50,7 @@ var render = function (position) {
     $eventList.innerHTML += [
       '<div>',
         '<div>',
-          data[i].title + '<br /><span>' + data[i].name + '</span>',
+          data[i].name + '<br /><span>' + data[i].address + '</span>',
         '</div>',
         '<div>',
           '<div>' + data[i].attendees + '</div>  attendees',
