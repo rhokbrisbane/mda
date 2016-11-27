@@ -137,5 +137,5 @@ COMPRESS_OFFLINE = False
 COMPRESS_ENABLED = True
 
 COMPRESS_PRECOMPILERS = (
-    ('text/x-scss', 'django_libsass.SassCompiler'),
+    ('text/x-scss', 'sass --scss {infile} {outfile}'),
 )
