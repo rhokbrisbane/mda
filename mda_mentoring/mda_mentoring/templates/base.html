@@ -4,7 +4,6 @@
 <html>
   <head>
       <meta charset="UTF-8">
-
       <title>MDA - Mentoring</title>
 
       {% compress css %}
@@ -34,7 +33,7 @@
                   <img src="{% static "images/mentor.svg" %}">
                 </div>
                 </a>
-                <a href="/goals">
+                <a href="/goals/2">
                   <div class="side-bar-link icon font-base my2 sm-mx2">
                     <img src="{% static "images/goal.svg" %}">
                   </div>
@@ -45,7 +44,14 @@
               </div>
             </div>
             <div class="flex md-flex-column lg-flex-column items-center py2 sm-mr1">
-              <div class="side-bar-avatar" style="background-image: url(<%= current_user.avatar.url(:thumb) %>)"></div>
+                <div class="side-bar-avatar" style="background-image: url(<%= current_user.avatar.url(:thumb) %>)"></div>
+                <div class="flex flex-column sm-flex-row flex-auto">
+                    <a href="/profiles/logout">
+                        <div class="side-bar-link icon font-base my2 sm-mx2">
+                            <img src="{% static "images/mentor.svg" %}">
+                        </div>
+                    </a>
+                </div>
             </div>
           </div>
         </div>

@@ -10,6 +10,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .models import Profile
 from mda_mentoring.settings import LOGIN_URL
 
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
 
 class LoginView(View):
     def post(self, request):
@@ -55,7 +58,9 @@ class CreateProfileView(CreateView):
 
 
 # Create your views here.
+
 class ProfileView(View):
+    @method_decorator(login_required)
     def get(self, request):
         current_user = request.user
         if current_user.is_mentor:
