@@ -26,9 +26,6 @@
   {% endfor %}
   </script>
   <script type="text/javascript">
-    window.navigator
-  ? window.navigator.geolocation.getCurrentPosition(render)
-   // default to Brisbane @ -27.4698,153.0251
-  : render({ coords: { latitude: -27.4698, longitude: 153.0251 } });
+  render({ coords: { latitude: -27.4698, longitude: 153.0251 } });
   </script>
 {% endblock %}
