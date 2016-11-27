@@ -40,9 +40,13 @@ var render = function (position) {
     var centerMarker = new window.RichMarker({
       content: '<div class="map-marker">' + data[i].attendees + '</div>',
       position: new window.google.maps.LatLng(
-        data[i].lat,
-        data[i].lng
-      ),
+      position.coords.latitude + Math.random() / 10,
+      position.coords.longitude + Math.random() / 10
+    ),
+      // position: new window.google.maps.LatLng(
+      //   data[i].lat,
+      //   data[i].lng
+      // ),
       shadow: 'none',
       map: map
     });
