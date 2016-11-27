@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'profiles',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,6 +52,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mda_mentoring.urls'
+
+LOGIN_URL = '/profiles/login/'
 
 TEMPLATES = [
     {
@@ -75,19 +77,26 @@ WSGI_APPLICATION = 'mda_mentoring.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'mda',
+#         'USER': 'mda',
+#         'PASSWORD': 'mda12345678',
+#         'HOST': 'mda-mentoring.c74u77we23gg.ap-southeast-2.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mda',
-        'USER': 'mda',
-        'PASSWORD': 'mda12345678',
-        'HOST': 'mda-mentoring.c74u77we23gg.ap-southeast-2.rds.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
-
-
+AUTH_USER_MODEL = 'profiles.Profile'
+AUTH_PROFILE_MODULE = 'profiles.Profile'
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 

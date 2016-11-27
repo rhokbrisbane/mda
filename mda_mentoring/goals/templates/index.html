@@ -22,6 +22,8 @@
   </style>
 </head>
 <body>
+  {% if user.is_authenticated %}Hello, {{ user.username }}.{% endif %}
+  <a href="/profiles/logout/">Logout</a>
   <svg viewport="0 0 200 200" id="graph"></svg>
   <script>
 
