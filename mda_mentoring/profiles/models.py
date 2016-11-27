@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from events.models import Event
 
 class Profile(AbstractUser):
 
@@ -10,10 +11,10 @@ class Profile(AbstractUser):
     language = models.TextField(null=True, blank=True)
     qualification = models.TextField(null=True, blank=True)
     slack_token = models.TextField(null=True, blank=True)
-    profile_type = models.CharField(max_length = 6, null=True, blank=True)
+    profile_type = models.CharField(max_length=6, null=True, blank=True)
     field = models.TextField(null=True, blank=True)
     mentee = models.ForeignKey('self', null=True, blank=True)
-
+    events = models.ManyToManyField(Event, blank=True)
 
     def __unicode__(self):
         return self.username
