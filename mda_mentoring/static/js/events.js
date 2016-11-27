@@ -47,6 +47,8 @@ var render = function (position) {
       map: map
     });
 
+    console.log(data[i])
+
     $eventList.innerHTML += [
       '<div>',
         '<div>',

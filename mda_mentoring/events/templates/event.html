@@ -1,1 +1,32 @@
-{{ object }}
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="map-wrapper">
+    <div>
+      <div id="map"></div>
+    </div>
+    <div class="list"></div>
+  </div>
+
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+  <script type="text/javascript" src="{% static "js/detail.js" %}"></script>
+  <script type="text/javascript">
+  var data = [];
+  {% for o in object_list %}
+    data.push({
+      'name': '{{ o.name }}',
+      'lng': parseFloat('{{ o.longitude }}'),
+      'lat': parseFloat('{{ o.latitude }}'),
+      'attendees': Number('{{ o.total_attendees }}'),
+      'address': '{{ o.address }}'
+    });
+  {% endfor %}
+  </script>
+  <script type="text/javascript">
+    window.navigator
+  ? window.navigator.geolocation.getCurrentPosition(render)
+   // default to Brisbane @ -27.4698,153.0251
+  : render({ coords: { latitude: -27.4698, longitude: 153.0251 } });
+  </script>
+{% endblock %}

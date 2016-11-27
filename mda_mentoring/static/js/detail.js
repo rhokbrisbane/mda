@@ -1,29 +1,29 @@
-var eventInfo = {
-  name: 'A meeting',
-  details: 'This is an event description, these are some more words to fill it up.',
+// var eventInfo = {
+//   name: 'A meeting',
+//   details: 'This is an event description, these are some more words to fill it up.',
 
-  eventLocation: {
-    lat: -27.4698,
-    lng: 153.0251,
-    name: '123 Fake street, Brisbane, 4000'
-  },
+//   eventLocation: {
+//     lat: -27.4698,
+//     lng: 153.0251,
+//     name: '123 Fake street, Brisbane, 4000'
+//   },
 
-  attendees: [{
-    name: 'Adam',
-    role: 'Mentee'
-  }, {
-    name: 'Lennon',
-    role: 'Mentee'
-  }, {
-    name: 'Martin',
-    role: 'Mentee'
-  }],
+//   attendees: [{
+//     name: 'Adam',
+//     role: 'Mentee'
+//   }, {
+//     name: 'Lennon',
+//     role: 'Mentee'
+//   }, {
+//     name: 'Martin',
+//     role: 'Mentee'
+//   }],
 
-  invitable: [{
-    name: 'Faye',
-    role: 'Mentor'
-  }]
-};
+//   invitable: [{
+//     name: 'Faye',
+//     role: 'Mentor'
+//   }]
+// };
 
 var render = function (eventInfo) {
   var attendees = eventInfo.attendees;
