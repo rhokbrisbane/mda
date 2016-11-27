@@ -1,6 +1,7 @@
 /* Color Collection
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 $color-collection:       ($brand,
+                          $brand-highlight,
                           $white,
                           $black,
                           $grey-xdark,
@@ -25,6 +26,7 @@ $color-collection:       ($brand,
                           $green-tint-light);
 
 $color-name-collection:  ('brand',
+                          'brand-highlight',
                           'white',
                           'black',
                           'grey-xdark',
