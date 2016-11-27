@@ -1,0 +1,20 @@
+/* Hyperlink
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: $grey;
+  text-decoration: none;
+  transition: $text-transition;
+
+  &:link,
+  &:hover,
+  &:visited,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: $brand;
+    outline: 0;
+  }
+}

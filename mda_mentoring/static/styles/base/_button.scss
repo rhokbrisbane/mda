@@ -1,0 +1,52 @@
+/* Button
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  padding: 1rem 2rem;
+  color: $white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: $brand-highlight;
+  border-radius: $border-radius;
+  transition: $button-transition;
+  font-size: $font-base;
+  -webkit-appearance: none;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $brand-highlight-tint;
+    outline: 0;
+  }
+
+  &.button-outline {
+    border: $border;
+    background-color: transparent;
+    color: $brand;
+    border-width: 1px;
+    border-style: solid;
+
+    &:hover,
+    &:focus {
+      color: $brand-highlight-tint;
+      background-color: transparent;
+      border-color: $brand-highlight-tint;
+    }
+  }
+}
+
+input[type="submit"] {
+  @extend .sm-w100;
+  border: none;
+  background-color: $brand;
+  color: $white;
+
+  &:hover {
+    background: $brand-highlight-tint;
+  }
+}

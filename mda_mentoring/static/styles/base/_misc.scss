@@ -1,0 +1,129 @@
+/* Miscellaneous
+/  - Cursor
+/  - Shadow
+/  - Border
+/  - Required Asterisk
+/  - Display Properties
+/  - Float
+/  - Position
+/  - Horizontal Line
+/  - Clearfix hack
+/  - Transition
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Cursor
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.pointer { cursor: pointer; }
+
+/* Shadow
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.shadow             { box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.05); }
+.shadow-none        { box-shadow: none !important; }
+.shadow-hover:hover { 
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15); 
+  transition: $button-transition;
+}
+
+/* Border
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.rounded                { border-radius: $border-radius; }
+.border-full            { border: $border; }
+.border-top-solid       { border-top-width: 1px; border-top-style: solid; }
+.border-bottom-dashed   { border-bottom-width: 1px; border-bottom-style: dashed; }
+.border-bottom-solid    { border-bottom-width: 1px; border-bottom-style: solid; }
+.border-bottom-solid2   { border-bottom-width: 2px; border-bottom-style: solid; }
+
+/* Required
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.required:after {
+  content: '*';
+  margin-left: 0.5rem;
+  color: $alert;
+}
+
+/* Display Properties
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.block        { display: block; }
+.inline-block { display: inline-block; }
+
+/* Float
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-pull-right { float: right; }
+.u-pull-left  { float: left; }
+.u-pull-none  { float: none; }
+
+/* Position
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.relative { position: relative; }
+.fixed    { position: fixed; }
+
+/* Horizontal Line
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  border-top: 1px solid $grey-light;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.hr-heading {
+  @extend hr;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Clearfix hack
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-clearfix {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/* Transition
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.text-transition { transition: $text-transition; }
+
+/* Notification Dot
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.notifictaion-dot {
+  height: 1rem;
+  width: 1rem;
+  background-color: $brand;
+  border-radius: 100%;
+  position: absolute;
+  left: -0.5rem;
+  top: -0.5rem;
+}
+
+.display_length {
+  display: none;
+}
+
+/* Highlight
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.highlight {
+  padding: 0.2rem 0.4rem;
+  background-color: $brand;
+  color: $white;
+  border-radius: $border-radius;
+}
+
+/* Cursor
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.clickable { cursor: pointer; }
+
+/* Scroll
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.scroll-y-auto { overflow-y: auto; }
+
+/* z-index
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.z-index-1 { z-index: 1; }
