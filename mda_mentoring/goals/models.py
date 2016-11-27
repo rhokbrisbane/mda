@@ -22,6 +22,9 @@ class Milestone(models.Model):
     def __str__(self):
         return self.name
 
-# class Action(models.Model):
-#     milestone = models.ForeignKey(Milestone, on_delete=models.CASCADE)
-#     name = models.CharField(max_length=200, default="Here's an action to complete my milestone")
+class Action(models.Model):
+    milestone = models.ForeignKey(Milestone, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200, default="Here's an action to complete my milestone")
+
+    def __str__(self):
+        return self.name

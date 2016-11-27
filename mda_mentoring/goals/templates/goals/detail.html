@@ -16,18 +16,37 @@ data.push({ 'rating': {{ milestone.value}}, 'name': '{{ milestone.name }}' })
 <h1>{{ goal.name }} </h1>
 <h2>Mentee: {{ goal.user }}</h2>
 <h3>Evaluated {{ goal.eval_date }}</h3>
+<div>
 <svg viewport="0 0 200 200" id="graph"></svg>
+</div>
 
-Each milestone is to be evaluated weekly using the following low (0) and high (10) conditions
+<div>
+<span>Each milestone is to be evaluated weekly using the following low (0) and high (10) conditions</span>
 
 <ul>
     {% for milestone in goal.milestone_set.all %}
-    <li>{{milestone.name}}</li>
+    <li>Milestone: {{milestone.name}}</li>
     <ul>
         <li>Low evaluation: {{milestone.low_evaluation}}</li>
         <li>High evaluation: {{milestone.high_evaluation}}</li>
     </ul>
     {% endfor %}
 </ul>
+</div>
+
+
+<div>
+<h1>Actions</h1>
+<ul style="list-style-type: none;">
+    {% for milestone in goal.milestone_set.all %}
+    <li>Milestone: {{ milestone.name }}</li>
+    <ul style="list-style-type: none;">
+        {% for action in milestone.action_set.all %}
+        <li><input type="checkbox"> {{action.name}}</input></li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</ul>
+</div>
 
 {% endblock %}
