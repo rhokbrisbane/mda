@@ -1,5 +1,19 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
+class Profile(AbstractUser):
+
+    phone_number = models.CharField(max_length=12)
+    experience = models.TextField(null=True, blank=True)
+    language = models.TextField(null=True, blank=True)
+    qualification = models.TextField(null=True, blank=True)
+    slack_token = models.TextField(null=True, blank=True)
+    profile_type = models.CharField(max_length = 6, null=True, blank=True)
+    field = models.TextField(null=True, blank=True)
+    mentee = models.ForeignKey('self', null=True, blank=True)
+
+
+    def __unicode__(self):
+        return self.username

@@ -56,6 +56,8 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'mda_mentoring.urls'
 
+LOGIN_URL = '/profiles/login/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -77,7 +79,7 @@ WSGI_APPLICATION = 'mda_mentoring.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
+ 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -89,7 +91,8 @@ DATABASES = {
     }
 }
 
-
+AUTH_USER_MODEL = 'profiles.Profile'
+AUTH_PROFILE_MODULE = 'profiles.Profile'
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
