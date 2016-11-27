@@ -41,3 +41,8 @@ class CreateProfileView(CreateView):
     fields = ['username', 'email', 'password', 'phone_number', 'experience']
     template_name = "create_profile.html"
     success_url = '/goals/'
+
+# Create your views here.
+class MenteeProfileView(View):
+    def get(self, request):
+        return render(request, 'mentee/profile.html')
