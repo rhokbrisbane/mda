@@ -10,3 +10,5 @@ lib
 lib64
 venv
 *.pyc
+.sass-cache
+**/static/CACHE
