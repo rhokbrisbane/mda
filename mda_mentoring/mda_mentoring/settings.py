@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'goals',
     'profiles',
+    'mda_mentoring',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -2,3 +2,10 @@
 <h2>{{ goal.user }}</h2>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<ul>
+    {% for milestone in goal.milestone_set.all %}
+    <li><a href="/milestone/{{ milestone.id }}/">{{ milestone.name }}</a> has current value {{ milestone.value }}</li>
+    {% endfor %}
+</ul>
+
