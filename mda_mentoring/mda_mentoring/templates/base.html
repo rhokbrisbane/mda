@@ -48,8 +48,9 @@
               </div>
             </div>
             <div class="flex md-flex-column lg-flex-column items-center py2 sm-mr1">
-                <div class="side-bar-avatar" style="background-image: url(<%= current_user.avatar.url(:thumb) %>)"></div>
-
+                <a class="mt2 font-small" href="/profiles/edit">
+                  <div class="side-bar-avatar" style="background-image: url(<%= current_user.avatar.url(:thumb) %>)"></div>
+                </a>
                 <div class="flex flex-column sm-flex-row flex-auto">
                     <a class="mt2 font-small" href="/profiles/logout">Sign out</a>
                 </div>

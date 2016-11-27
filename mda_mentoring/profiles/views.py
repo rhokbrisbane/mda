@@ -58,6 +58,14 @@ class CreateProfileView(CreateView):
 
 
 # Create your views here.
+class OwnProfileView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        current_user = request.user
+        profile = current_user
+        
+        return render(request, 'own_profile.html', {'profile': profile })
+
 
 class ProfileView(View):
     @method_decorator(login_required)

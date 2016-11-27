@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Title -->
+<div class="bg-white shadow">
+  <div class="container flex flex-wrap sm-flex-column justify-between items-center">
+    <div class="flex items-center">
+      <div class="row-title sm-py4">My profile</div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Content -->
+<div class="mt4 container">
+  <div class="flex flex-column items-center mb2">
+    <div class="row-avatar shadow"></div>
+    <h3 class="mt4 text-grey-dark">{{ profile.first_name }} {{ profile.last_name }}</h2>
+  </div>
+
+  <!-- row -->
+  <div class="bg-white border-bottom-solid border-grey-xlight py2 mb2 shadow container">
+    <div class="flex sm-flex-column items-start sm-items-start">
+      <div class="row-label">
+        Phone number
+      </div>
+      <div class="flex4 sm-flex1 sm-mt1 sm-w100">
+        {{ profile.phone_number }}
+      </div>
+    </div>
+  </div>
+
+  <!-- row -->
+  <div class="bg-white border-bottom-solid border-grey-xlight py2 mb2 shadow container">
+    <div class="flex sm-flex-column items-start sm-items-start">
+      <div class="row-label">
+        Email
+      </div>
+      <div class="flex4 sm-flex1 sm-mt1 sm-w100">
+        {{ profile.email }}
+      </div>
+    </div>
+  </div>
+
+  <!-- row -->
+  <div class="bg-white border-bottom-solid border-grey-xlight py2 mb2 shadow container">
+    <div class="flex sm-flex-column items-start sm-items-start">
+      <div class="row-label">
+        language
+      </div>
+      <div class="flex4 sm-flex1 sm-mt1 sm-w100">
+        {{ profile.language }}
+      </div>
+    </div>
+  </div>
+
+  <!-- row -->
+  <div class="bg-white border-bottom-solid border-grey-xlight py2 mb2 shadow container">
+    <div class="flex sm-flex-column items-start sm-items-start">
+      <div class="row-label">
+        Field
+      </div>
+      <div class="flex4 sm-flex1 sm-mt1 sm-w100">
+        {{ profile.field }}
+      </div>
+    </div>
+  </div>
+
+  <!-- row -->
+  <div class="bg-white border-bottom-solid border-grey-xlight py2 mb2 shadow container">
+    <div class="flex sm-flex-column items-start sm-items-start">
+      <div class="row-label">
+        Experience
+      </div>
+      <div class="flex4 sm-flex1 sm-mt1 sm-w100">
+        {{ profile.experience }}
+      </div>
+    </div>
+  </div>
+
+  <!-- row -->
+  <div class="bg-white border-bottom-solid border-grey-xlight py2 mb2 shadow container">
+    <div class="flex sm-flex-column items-start sm-items-start">
+      <div class="row-label">
+        Qualification
+      </div>
+      <div class="flex4 sm-flex1 sm-mt1 sm-w100">
+        {{ profile.qualification }}
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
