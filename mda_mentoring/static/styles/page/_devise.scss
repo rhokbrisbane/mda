@@ -16,7 +16,9 @@
     @extend .mb0;
   }
 
-  input[type="submit"] {
+  input[type="submit"],
+  button[type="submit"] {
+    -webkit-appearance: none;
     @extend .mt4;
     @extend .mb0;
     @extend .w100;
@@ -50,7 +52,7 @@
 }
 
 .bg-devise {
-  background-image: image-url('background-devise.jpeg');
+  background-image: url('../images/background-devise.jpeg');
   background-size: cover;
   background-position: 0 center;
   position: relative;
