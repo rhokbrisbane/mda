@@ -5,10 +5,10 @@
 <div class="bg-white shadow">
   <div class="container flex flex-wrap sm-flex-column justify-between items-center">
     <div class="flex items-center">
-      <div class="row-title sm-py4">My Mentee</div>
+      <div class="row-title sm-py4">My {% if request.user.is_mentor %}mentee{% else %}mentor{% endif %}</div>
     </div>
     <div class="flex sm-mb4">
-      <div class="row-button">Slack Message</div>
+      <a target="_blank" href="https://mda-mentoring.slack.com/messages/@{{ profile.slack_username }}"><div class="row-button">Slack Message</div></a>
     </div>
   </div>
 </div>
@@ -17,7 +17,7 @@
 <div class="mt4 container">
   <div class="flex flex-column items-center mb2">
     <div class="row-avatar shadow"></div>
-    <h3 class="mt4 text-grey-dark">Lennon Cheng</h2>
+    <h3 class="mt4 text-grey-dark">{{ profile.first_name }} {{ profile.last_name }}</h2>
   </div>
 
   <!-- row -->
@@ -27,7 +27,7 @@
         Phone number
       </div>
       <div class="flex4 sm-flex1 sm-mt1 sm-w100">
-        0421000000
+        {{ profile.phone_number }}
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@
         Email
       </div>
       <div class="flex4 sm-flex1 sm-mt1 sm-w100">
-        lennon@mda-mentoring.com.au
+        {{ profile.email }}
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
         language
       </div>
       <div class="flex4 sm-flex1 sm-mt1 sm-w100">
-        Chinese
+        {{ profile.language }}
       </div>
     </div>
   </div>
@@ -63,7 +63,7 @@
         Field
       </div>
       <div class="flex4 sm-flex1 sm-mt1 sm-w100">
-        IT
+        {{ profile.field }}
       </div>
     </div>
   </div>
@@ -75,7 +75,7 @@
         Experience
       </div>
       <div class="flex4 sm-flex1 sm-mt1 sm-w100">
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+        {{ profile.experience }}
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@
         Qualification
       </div>
       <div class="flex4 sm-flex1 sm-mt1 sm-w100">
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+        {{ profile.qualification }}
       </div>
     </div>
   </div>

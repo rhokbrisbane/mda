@@ -10,6 +10,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .models import Profile
 from mda_mentoring.settings import LOGIN_URL
 
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
 
 class LoginView(View):
     def post(self, request):
@@ -20,7 +23,7 @@ class LoginView(View):
             if user.is_active:
                 login(request, user)
 
-                return HttpResponseRedirect('/goals/')
+                return HttpResponseRedirect('/profiles/view/')
             else:
                 return HttpResponse("Inactive user.")
         else:
@@ -38,7 +41,7 @@ class LogoutView(View):
 
 class CreateProfileView(CreateView):
     model = Profile
-    fields = ['username', 'email', 'password', 'phone_number', 'experience', 'is_mentor']
+    fields = ['username', 'email', 'password', 'first_name', 'last_name', 'phone_number', 'experience', 'field', 'qualification', 'language', 'is_mentor']
     template_name = "create_profile.html"
     success_url = '/goals/'
 
@@ -55,6 +58,14 @@ class CreateProfileView(CreateView):
 
 
 # Create your views here.
-class MenteeProfileView(View):
+
+class ProfileView(View):
+    @method_decorator(login_required)
     def get(self, request):
-        return render(request, 'mentee/profile.html')
+        current_user = request.user
+        if current_user.is_mentor:
+            profile = current_user.mentee or current_user
+        else:
+            profile = Profile.objects.filter(mentee_id=current_user.id).first() or current_user
+
+        return render(request, 'view_profile.html', {'profile': profile })
